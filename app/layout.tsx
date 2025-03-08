@@ -28,8 +28,8 @@ export default function RootLayout({
     <html lang="en" data-theme='mytheme'>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
-        <div className="grid place-content-around">
-          <div className="w-full lg:w-[1200px] xl:w-[1440px]">
+        <div className="grid place-content-around w-full">
+          <div className="w-full">
             {children}
           </div>
         </div>
