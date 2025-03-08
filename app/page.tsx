@@ -1,9 +1,10 @@
 import React from 'react';
+import HeaderStateMain from './components/Web/HeaderState/HeaderStateMain';
 
 const page = () => {
   return (
     <div>
-      <h1>Hello</h1>
+      <HeaderStateMain/>
     </div>
   );
 };
