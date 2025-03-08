@@ -2,27 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import logo from '../../../assets/images/logo.png';
+import { IconCross, IconMenu2, IconX } from '@tabler/icons-react';
 
 const Header = () => {
     return (
-        <div className='grid place-content-around bg-base-200 border-b-2 border-gray-200'>
+        <div className='md:grid md:place-content-around bg-base-200 border-b-2 border-gray-200'>
             <div className="navbar shadow-sm w-full lg:w-[1200px] xl:w-[1440px]">
                 <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-                        </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><Link href='/'>Government Jobs</Link></li>
-                            <li><Link href='/'>Private Jobs</Link></li>
-                            <li><Link href='/'>Admit Card</Link></li>
-                            <li><Link href='/'>Result</Link></li>
-                            <li><Link href='/'>Notice</Link></li>
-                            <li><Link href='/'>Contact Us</Link></li>
-                        </ul>
-                    </div>
                     <Link href='/' className="">
                         <Image src={logo} height={60} width={120} alt='Logo' />
                     </Link>
@@ -37,7 +23,40 @@ const Header = () => {
                         <li><Link href='/'>Contact Us</Link></li>
                     </ul>
                 </div>
-                <div className="navbar-end flex gap-2">
+                <div className="navbar-end flex md:hidden text-end">
+                    <div className="drawer drawer-end">
+                        <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+                        <div className="drawer-content">
+                            {/* Page content here */}
+                            <label htmlFor="my-drawer-4" className="drawer-button btn"><IconMenu2 /></label>
+                        </div>
+                        <div className="drawer-side bg-primary">
+                            <div className='w-full'>
+                                <div className="flex justify-between w-full p-5">
+                                    <Link href='/' className="">
+                                        <Image src={logo} height={60} width={120} alt='Logo' />
+                                    </Link>
+                                    <label htmlFor="my-drawer-4" aria-label="close sidebar" className='btn btn-circle btn-sm text-primary'><IconX /></label>
+                                </div>
+                                <div className='w-full'>
+                                    <ul className="text-start text-white px-5">
+                                        <li className='py-2'><Link href='/'>Government Jobs</Link></li>
+                                        <li className='py-2'><Link href='/'>Private Jobs</Link></li>
+                                        <li className='py-2'><Link href='/'>Admit Card</Link></li>
+                                        <li className='py-2'><Link href='/'>Result</Link></li>
+                                        <li className='py-2'><Link href='/'>Notice</Link></li>
+                                        <li className='py-2'><Link href='/'>Contact Us</Link></li>
+                                    </ul>
+                                    <div className="p-5">
+                                        <Link href='' className="btn btn-accent btn-block text-white">Become Premium</Link>
+                                        <Link href='' className="btn btn-warning text-black btn-block mt-3">Sign in/ Sign Up</Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="navbar-end hidden md:flex gap-2 ">
                     <Link href='' className="btn btn-primary text-white">Become Premium</Link>
                     <Link href='' className="btn btn-primary btn-outline">Sign in/ Sign Up</Link>
                 </div>
